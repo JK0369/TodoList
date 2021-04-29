@@ -42,4 +42,8 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+
+    func didLogin(withEmail: String?, _ password: String?) {
+        print("didLogin")
+    }
 }
