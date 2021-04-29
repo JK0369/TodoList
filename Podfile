@@ -7,5 +7,6 @@ target 'TodoList' do
 
   pod 'SnapKit'
   pod 'RIBs', :git => 'https://github.com/uber/RIBs.git', :tag => '0.9.2'
+  pod 'RxCocoa'
 
 end

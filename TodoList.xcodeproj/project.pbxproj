@@ -18,6 +18,11 @@
 		E0868DB826397F77003D9D87 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DB426397F77003D9D87 /* RootViewController.swift */; };
 		E0868DB926397F77003D9D87 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DB526397F77003D9D87 /* RootBuilder.swift */; };
 		E0868DBA26397F77003D9D87 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DB626397F77003D9D87 /* RootInteractor.swift */; };
+		E0868DC2263985BD003D9D87 /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DBE263985BD003D9D87 /* LoggedOutRouter.swift */; };
+		E0868DC3263985BD003D9D87 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DBF263985BD003D9D87 /* LoggedOutViewController.swift */; };
+		E0868DC4263985BD003D9D87 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC0263985BD003D9D87 /* LoggedOutBuilder.swift */; };
+		E0868DC5263985BD003D9D87 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */; };
+		E0868DC726398A45003D9D87 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC626398A45003D9D87 /* RootComponent+LoggedOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		E0868DB426397F77003D9D87 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E0868DB526397F77003D9D87 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		E0868DB626397F77003D9D87 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		E0868DBE263985BD003D9D87 /* LoggedOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
+		E0868DBF263985BD003D9D87 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		E0868DC0263985BD003D9D87 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
+		E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		E0868DC626398A45003D9D87 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,7 @@
 		E0868D9826397BCC003D9D87 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				E0868DBB263982D5003D9D87 /* LoggedOut */,
 				E0868DAD26397E5C003D9D87 /* AppStart */,
 				E0868DB226397F65003D9D87 /* Root */,
 				E0868D9B26397BCC003D9D87 /* SceneDelegate.swift */,
@@ -115,8 +126,20 @@
 				E0868DB426397F77003D9D87 /* RootViewController.swift */,
 				E0868DB526397F77003D9D87 /* RootBuilder.swift */,
 				E0868DB626397F77003D9D87 /* RootInteractor.swift */,
+				E0868DC626398A45003D9D87 /* RootComponent+LoggedOut.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		E0868DBB263982D5003D9D87 /* LoggedOut */ = {
+			isa = PBXGroup;
+			children = (
+				E0868DBE263985BD003D9D87 /* LoggedOutRouter.swift */,
+				E0868DBF263985BD003D9D87 /* LoggedOutViewController.swift */,
+				E0868DC0263985BD003D9D87 /* LoggedOutBuilder.swift */,
+				E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */,
+			);
+			path = LoggedOut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,13 +256,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0868D9E26397BCC003D9D87 /* ViewController.swift in Sources */,
+				E0868DC4263985BD003D9D87 /* LoggedOutBuilder.swift in Sources */,
 				E0868DB926397F77003D9D87 /* RootBuilder.swift in Sources */,
 				E0868DB726397F77003D9D87 /* RootRouter.swift in Sources */,
 				E0868DB826397F77003D9D87 /* RootViewController.swift in Sources */,
+				E0868DC5263985BD003D9D87 /* LoggedOutInteractor.swift in Sources */,
+				E0868DC2263985BD003D9D87 /* LoggedOutRouter.swift in Sources */,
+				E0868DC726398A45003D9D87 /* RootComponent+LoggedOut.swift in Sources */,
 				E0868DAF26397E72003D9D87 /* AppComponent.swift in Sources */,
 				E0868D9A26397BCC003D9D87 /* AppDelegate.swift in Sources */,
 				E0868DBA26397F77003D9D87 /* RootInteractor.swift in Sources */,
 				E0868D9C26397BCC003D9D87 /* SceneDelegate.swift in Sources */,
+				E0868DC3263985BD003D9D87 /* LoggedOutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS7U83UJNK;
 				INFOPLIST_FILE = TodoList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,6 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS7U83UJNK;
 				INFOPLIST_FILE = TodoList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

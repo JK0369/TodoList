@@ -1,5 +1,5 @@
 //
-//  RootInteractor.swift
+//  LoggedOutInteractor.swift
 //  TodoList
 //
 //  Created by 김종권 on 2021/04/28.
@@ -8,27 +8,27 @@
 import RIBs
 import RxSwift
 
-protocol RootRouting: ViewableRouting {
+protocol LoggedOutRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol RootPresentable: Presentable {
-    var listener: RootPresentableListener? { get set }
+protocol LoggedOutPresentable: Presentable {
+    var listener: LoggedOutPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol RootListener: class {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+protocol LoggedOutListener: AnyObject {
+    func didLogin(withEmail: String?, _ password: String?)
 }
 
-final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
+final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, LoggedOutInteractable, LoggedOutPresentableListener {
 
-    weak var router: RootRouting?
-    weak var listener: RootListener?
+    weak var router: LoggedOutRouting?
+    weak var listener: LoggedOutListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: RootPresentable) {
+    override init(presenter: LoggedOutPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,7 +43,9 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         // TODO: Pause any business logic.
     }
 
-    func didLogin(withEmail: String?, _ password: String?) {
-        print("didLogin")
+    // MARK: - LoggedOut Listener
+
+    func login(withEmail: String?, _ password: String?) {
+        listener?.didLogin(withEmail: withEmail, password)
     }
 }
