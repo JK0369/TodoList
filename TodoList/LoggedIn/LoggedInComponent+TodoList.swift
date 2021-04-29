@@ -17,4 +17,11 @@ protocol LoggedInDependencyTodoList: Dependency {
 extension LoggedInComponent: TodoListDependency {
 
     // TODO: Implement properties to provide for TodoList scope.
+    var inputEmail: String {
+        return email ?? ""
+    }
+
+    var inputPassword: String {
+        return password ?? ""
+    }
 }
