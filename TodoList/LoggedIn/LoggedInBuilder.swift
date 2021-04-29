@@ -22,12 +22,21 @@ final class LoggedInComponent: Component<LoggedInDependency> {
     }
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+
+    let email: String?
+    let password: String?
+
+    init(dependency: LoggedInDependency, email: String?, password: String?) {
+        self.email = email
+        self.password = password
+        super.init(dependency: dependency)
+    }
 }
 
 // MARK: - Builder
 
 protocol LoggedInBuildable: Buildable {
-    func build(withListener listener: LoggedInListener) -> LoggedInRouting
+    func build(withListener listener: LoggedInListener, email: String?, password: String?) -> LoggedInRouting
 }
 
 final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
@@ -36,8 +45,8 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: LoggedInListener) -> LoggedInRouting {
-        let component = LoggedInComponent(dependency: dependency)
+    func build(withListener listener: LoggedInListener, email: String?, password: String?) -> LoggedInRouting {
+        let component = LoggedInComponent(dependency: dependency, email: email, password: password)
         let interactor = LoggedInInteractor()
         interactor.listener = listener
         return LoggedInRouter(interactor: interactor, viewController: component.LoggedInViewController)
