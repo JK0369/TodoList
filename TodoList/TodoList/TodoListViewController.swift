@@ -18,4 +18,17 @@ protocol TodoListPresentableListener: class {
 final class TodoListViewController: UIViewController, TodoListPresentable, TodoListViewControllable {
 
     weak var listener: TodoListPresentableListener?
+
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+        super.init()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("IB is not supported")
+    }
+
+    private let email: String
+    private let password: String
 }

@@ -41,7 +41,8 @@ final class TodoListBuilder: Builder<TodoListDependency>, TodoListBuildable {
 
     func build(withListener listener: TodoListListener) -> TodoListRouting {
         let component = TodoListComponent(dependency: dependency)
-        let viewController = TodoListViewController()
+        let viewController = TodoListViewController(email: component.email,
+                                                    password: component.password)
         let interactor = TodoListInteractor(presenter: viewController)
         interactor.listener = listener
         return TodoListRouter(interactor: interactor, viewController: viewController)
