@@ -48,7 +48,10 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
     func build(withListener listener: LoggedInListener, email: String?, password: String?) -> LoggedInRouting {
         let component = LoggedInComponent(dependency: dependency, email: email, password: password)
         let interactor = LoggedInInteractor()
+        let todoListBuilder = TodoListBuilder(dependency: component)
         interactor.listener = listener
-        return LoggedInRouter(interactor: interactor, viewController: component.LoggedInViewController)
+        return LoggedInRouter(interactor: interactor,
+                              viewController: component.LoggedInViewController,
+                              todoListBuilder: todoListBuilder)
     }
 }

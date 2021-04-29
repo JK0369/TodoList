@@ -21,8 +21,11 @@ protocol LoggedInViewControllable: ViewControllable {
 final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
-    init(interactor: LoggedInInteractable, viewController: LoggedInViewControllable) {
+    init(interactor: LoggedInInteractable,
+         viewController: LoggedInViewControllable,
+         todoListBuilder: TodoListBuilder) {
         self.viewController = viewController
+        self.todoListBuilder = todoListBuilder
         super.init(interactor: interactor)
         interactor.router = self
     }
@@ -35,4 +38,5 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
     // MARK: - Private
 
     private let viewController: LoggedInViewControllable
+    private let todoListBuilder: TodoListBuildable
 }

@@ -26,6 +26,11 @@
 		E0868DC4263985BD003D9D87 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC0263985BD003D9D87 /* LoggedOutBuilder.swift */; };
 		E0868DC5263985BD003D9D87 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */; };
 		E0868DC726398A45003D9D87 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0868DC626398A45003D9D87 /* RootComponent+LoggedOut.swift */; };
+		E0B34A68263AD08500C72855 /* TodoListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B34A64263AD08500C72855 /* TodoListRouter.swift */; };
+		E0B34A69263AD08500C72855 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B34A65263AD08500C72855 /* TodoListViewController.swift */; };
+		E0B34A6A263AD08500C72855 /* TodoListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B34A66263AD08500C72855 /* TodoListBuilder.swift */; };
+		E0B34A6B263AD08500C72855 /* TodoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B34A67263AD08500C72855 /* TodoListInteractor.swift */; };
+		E0B34A6D263AD17500C72855 /* LoggedInComponent+TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B34A6C263AD17500C72855 /* LoggedInComponent+TodoList.swift */; };
 		E0F04ECD263A84DA009A07B2 /* RootComponent+LoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F04ECC263A84DA009A07B2 /* RootComponent+LoggedIn.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		E0868DC0263985BD003D9D87 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
 		E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
 		E0868DC626398A45003D9D87 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
+		E0B34A64263AD08500C72855 /* TodoListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListRouter.swift; sourceTree = "<group>"; };
+		E0B34A65263AD08500C72855 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		E0B34A66263AD08500C72855 /* TodoListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListBuilder.swift; sourceTree = "<group>"; };
+		E0B34A67263AD08500C72855 /* TodoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListInteractor.swift; sourceTree = "<group>"; };
+		E0B34A6C263AD17500C72855 /* LoggedInComponent+TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+TodoList.swift"; sourceTree = "<group>"; };
 		E0F04ECC263A84DA009A07B2 /* RootComponent+LoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedIn.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +100,7 @@
 			children = (
 				E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */,
 				E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */,
+				E0B34A6C263AD17500C72855 /* LoggedInComponent+TodoList.swift */,
 				E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */,
 			);
 			path = LoggedIn;
@@ -116,6 +127,7 @@
 		E0868D9826397BCC003D9D87 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				E0B34A63263AD07800C72855 /* TodoList */,
 				E0840A18263A83DB00D04DF2 /* LoggedIn */,
 				E0868DBB263982D5003D9D87 /* LoggedOut */,
 				E0868DAD26397E5C003D9D87 /* AppStart */,
@@ -160,6 +172,17 @@
 				E0868DC1263985BD003D9D87 /* LoggedOutInteractor.swift */,
 			);
 			path = LoggedOut;
+			sourceTree = "<group>";
+		};
+		E0B34A63263AD07800C72855 /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				E0B34A64263AD08500C72855 /* TodoListRouter.swift */,
+				E0B34A65263AD08500C72855 /* TodoListViewController.swift */,
+				E0B34A66263AD08500C72855 /* TodoListBuilder.swift */,
+				E0B34A67263AD08500C72855 /* TodoListInteractor.swift */,
+			);
+			path = TodoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +299,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0868D9E26397BCC003D9D87 /* ViewController.swift in Sources */,
+				E0B34A6A263AD08500C72855 /* TodoListBuilder.swift in Sources */,
+				E0B34A6D263AD17500C72855 /* LoggedInComponent+TodoList.swift in Sources */,
 				E0868DC4263985BD003D9D87 /* LoggedOutBuilder.swift in Sources */,
 				E0840A1C263A83F100D04DF2 /* LoggedInRouter.swift in Sources */,
 				E0840A1D263A83F100D04DF2 /* LoggedInBuilder.swift in Sources */,
 				E0868DB926397F77003D9D87 /* RootBuilder.swift in Sources */,
 				E0868DB726397F77003D9D87 /* RootRouter.swift in Sources */,
+				E0B34A68263AD08500C72855 /* TodoListRouter.swift in Sources */,
 				E0868DB826397F77003D9D87 /* RootViewController.swift in Sources */,
 				E0868DC5263985BD003D9D87 /* LoggedOutInteractor.swift in Sources */,
 				E0868DC2263985BD003D9D87 /* LoggedOutRouter.swift in Sources */,
@@ -289,8 +315,10 @@
 				E0F04ECD263A84DA009A07B2 /* RootComponent+LoggedIn.swift in Sources */,
 				E0868DAF26397E72003D9D87 /* AppComponent.swift in Sources */,
 				E0868D9A26397BCC003D9D87 /* AppDelegate.swift in Sources */,
+				E0B34A69263AD08500C72855 /* TodoListViewController.swift in Sources */,
 				E0868DBA26397F77003D9D87 /* RootInteractor.swift in Sources */,
 				E0868D9C26397BCC003D9D87 /* SceneDelegate.swift in Sources */,
+				E0B34A6B263AD08500C72855 /* TodoListInteractor.swift in Sources */,
 				E0868DC3263985BD003D9D87 /* LoggedOutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
