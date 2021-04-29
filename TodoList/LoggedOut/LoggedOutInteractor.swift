@@ -17,7 +17,7 @@ protocol LoggedOutPresentable: Presentable {
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol LoggedOutListener: class {
+protocol LoggedOutListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
@@ -41,5 +41,11 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+
+    // MARK: - LoggedOut Listener
+
+    func login(withEmail: String?, _ password: String?) {
+        print(withEmail, password)
     }
 }

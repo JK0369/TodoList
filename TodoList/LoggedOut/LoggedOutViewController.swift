@@ -7,12 +7,12 @@
 
 import RIBs
 import RxSwift
+import RxCocoa
 import UIKit
+import SnapKit
 
-protocol LoggedOutPresentableListener: class {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+protocol LoggedOutPresentableListener: AnyObject {
+    func login(withEmail: String?, _ password: String?)
 }
 
 final class LoggedOutViewController: UIViewController, LoggedOutPresentable, LoggedOutViewControllable {
@@ -42,6 +42,9 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .black
         view.addSubview(button)
+        button.rx.tap.subscribe(onNext: { [weak self] in
+            self?.listener?.login(withEmail: self?.emailTextField.text, self?.passwordTextField.text)
+        }).disposed(by: bag)
         return button
     }()
 
