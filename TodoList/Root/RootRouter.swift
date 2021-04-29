@@ -21,8 +21,10 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: RootInteractable,
                   viewController: RootViewControllable,
-                  loggedOutBuilder: LoggedOutBuilder) {
+                  loggedOutBuilder: LoggedOutBuilder,
+                  loggedInBuilder: LoggedInBuilder) {
         self.loggedOutBuilder = loggedOutBuilder
+        self.loggedInBuilder = loggedInBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
@@ -35,6 +37,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     // MARK: - Private
 
     private let loggedOutBuilder: LoggedOutBuildable
+    private let loggedInBuilder: LoggedInBuildable
 
     private var loggedOut: ViewableRouting?
 
