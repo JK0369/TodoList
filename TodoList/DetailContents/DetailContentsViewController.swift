@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import SnapKit
 
 protocol DetailContentsPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -19,12 +20,36 @@ final class DetailContentsViewController: UIViewController, DetailContentsPresen
 
     weak var listener: DetailContentsPresentableListener?
 
+    lazy var titleLabel: UILabel = {
+        let l = UILabel()
+        view.addSubview(l)
+        l.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.top).offset(20)
+            make.left.right.equalTo(view).inset(40)
+            make.height.equalTo(30)
+        }
+        return l
+    }()
+
+    lazy var detailLabel: UILabel = {
+        let l = UILabel()
+        view.addSubview(l)
+        l.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.left.right.equalTo(view).inset(40)
+            make.height.equalTo(30)
+        }
+        return l
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     }
 
     func set(memo: Memo) {
-        print(memo)
+        titleLabel.text = memo.title
+        detailLabel.text = memo.detail
     }
 
 }
