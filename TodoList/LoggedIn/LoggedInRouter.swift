@@ -40,6 +40,9 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
     func cleanupViews() {
         // TODO: Since this router does not own its view, it needs to cleanup the views
         // it may have added to the view hierarchy, when its interactor is deactivated.
+        if let currentChild = currentChild {
+            viewController.dismiss(viewController: currentChild.viewControllable)
+        }
     }
 
     // MARK: - Private
