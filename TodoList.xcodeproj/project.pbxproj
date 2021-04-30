@@ -13,6 +13,7 @@
 		E01DEC1F263BA51400760A8C /* DetailContentsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC1B263BA51400760A8C /* DetailContentsBuilder.swift */; };
 		E01DEC20263BA51400760A8C /* DetailContentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC1C263BA51400760A8C /* DetailContentsInteractor.swift */; };
 		E01DEC23263BA57B00760A8C /* LoggedInComponent+DetailContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */; };
+		E01DEC25263BBD4700760A8C /* MemoStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC24263BBD4700760A8C /* MemoStream.swift */; };
 		E0840A1C263A83F100D04DF2 /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */; };
 		E0840A1D263A83F100D04DF2 /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */; };
 		E0840A1E263A83F100D04DF2 /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */; };
@@ -49,6 +50,7 @@
 		E01DEC1B263BA51400760A8C /* DetailContentsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsBuilder.swift; sourceTree = "<group>"; };
 		E01DEC1C263BA51400760A8C /* DetailContentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsInteractor.swift; sourceTree = "<group>"; };
 		E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+DetailContents.swift"; sourceTree = "<group>"; };
+		E01DEC24263BBD4700760A8C /* MemoStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStream.swift; sourceTree = "<group>"; };
 		E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */,
 				E0B34A6C263AD17500C72855 /* LoggedInComponent+TodoList.swift */,
 				E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */,
+				E01DEC24263BBD4700760A8C /* MemoStream.swift */,
 			);
 			path = LoggedIn;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				E0868DB726397F77003D9D87 /* RootRouter.swift in Sources */,
 				E0B34A68263AD08500C72855 /* TodoListRouter.swift in Sources */,
 				E0868DB826397F77003D9D87 /* RootViewController.swift in Sources */,
+				E01DEC25263BBD4700760A8C /* MemoStream.swift in Sources */,
 				E0868DC5263985BD003D9D87 /* LoggedOutInteractor.swift in Sources */,
 				E0868DC2263985BD003D9D87 /* LoggedOutRouter.swift in Sources */,
 				E0868DC726398A45003D9D87 /* RootComponent+LoggedOut.swift in Sources */,
