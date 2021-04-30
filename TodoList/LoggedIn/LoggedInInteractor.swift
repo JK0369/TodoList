@@ -25,7 +25,6 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init() {}
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -42,4 +41,13 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
     func registeredTodo() {
         router?.routeToDetailContents()
     }
+
+    // MARK: - Private
+
+    private let mutableMemoStream: MutableMemoStream
+
+    init(mutableMemoStream: MutableMemoStream) {
+        self.mutableMemoStream = mutableMemoStream
+    }
+
 }

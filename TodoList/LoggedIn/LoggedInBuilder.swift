@@ -23,6 +23,10 @@ final class LoggedInComponent: Component<LoggedInDependency> {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 
+    var mutableMemoStream: MutableMemoStream {
+        return shared { MemoStreamImpl() }
+    }
+
     let email: String?
     let password: String?
 
@@ -47,7 +51,7 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
 
     func build(withListener listener: LoggedInListener, email: String?, password: String?) -> LoggedInRouting {
         let component = LoggedInComponent(dependency: dependency, email: email, password: password)
-        let interactor = LoggedInInteractor()
+        let interactor = LoggedInInteractor(mutableMemoStream: component.mutableMemoStream)
         let todoListBuilder = TodoListBuilder(dependency: component)
         let detailContentsBuilder = DetailContentsBuilder(dependency: component)
         interactor.listener = listener
