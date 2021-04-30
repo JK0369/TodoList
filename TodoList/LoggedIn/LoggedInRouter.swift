@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol LoggedInInteractable: Interactable, TodoListListener {
+protocol LoggedInInteractable: Interactable, TodoListListener, DetailContentsListener {
     var router: LoggedInRouting? { get set }
     var listener: LoggedInListener? { get set }
 }
@@ -47,6 +47,15 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
         }
     }
 
+    func routeToDetailContents() {
+        detachCurrentChild()
+
+        let detailContent = detailContentsBuilder.build(withListener: interactor)
+        currentChild = detailContent
+        attachChild(detailContent)
+        viewController.present(viewController: detailContent.viewControllable)
+    }
+
     // MARK: - Private
 
     private let viewController: LoggedInViewControllable
@@ -59,6 +68,13 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
         currentChild = todoList
         attachChild(todoList)
         viewController.present(viewController: todoList.viewControllable)
+    }
+
+    private func detachCurrentChild() {
+        if let currentChild = currentChild {
+            detachChild(currentChild)
+            viewController.dismiss(viewController: currentChild.viewControllable)
+        }
     }
 
 }

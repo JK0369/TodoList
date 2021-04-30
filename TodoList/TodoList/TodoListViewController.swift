@@ -14,6 +14,7 @@ protocol TodoListPresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
+    func registeredTodo()
 }
 
 final class TodoListViewController: UIViewController, TodoListPresentable, TodoListViewControllable {
@@ -94,7 +95,11 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
 
     private func alertWithTF() {
         let alert = UIAlertController(title: "메모", message: "메모를 입력해주세요", preferredStyle: UIAlertController.Style.alert )
-        let save = UIAlertAction(title: "저장", style: .default) {_ in
+
+        let cancel = UIAlertAction(title: "취소", style: .default) { (alertAction) in }
+        alert.addAction(cancel)
+
+        let save = UIAlertAction(title: "저장", style: .default) { [weak self] _ in
             let textField1 = alert.textFields![0] as UITextField
             let textField2 = alert.textFields![1] as UITextField
             let title = textField1.text ?? ""
@@ -102,8 +107,10 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
 
             UserDefaultManager.todoList.append(title)
             UserDefaultManager.detail.append(description)
-            self.data = UserDefaultManager.todoList
-            self.tableView.reloadData()
+            self?.data = UserDefaultManager.todoList
+            self?.tableView.reloadData()
+            self?.listener?.registeredTodo()
+
         }
 
         alert.addTextField { (textField) in
@@ -115,9 +122,6 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
             textField.textColor = .darkGray
         }
         alert.addAction(save)
-
-        let cancel = UIAlertAction(title: "취소", style: .default) { (alertAction) in }
-        alert.addAction(cancel)
         self.present(alert, animated:true, completion: nil)
     }
 

@@ -9,8 +9,9 @@ import RIBs
 import RxSwift
 
 protocol LoggedInRouting: Routing {
-    func cleanupViews()
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func cleanupViews()
+    func routeToDetailContents()
 }
 
 protocol LoggedInListener: class {
@@ -36,5 +37,9 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
 
         router?.cleanupViews()
         // TODO: Pause any business logic.
+    }
+
+    func registeredTodo() {
+        router?.routeToDetailContents()
     }
 }

@@ -18,4 +18,8 @@ protocol DetailContentsPresentableListener: class {
 final class DetailContentsViewController: UIViewController, DetailContentsPresentable, DetailContentsViewControllable {
 
     weak var listener: DetailContentsPresentableListener?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
