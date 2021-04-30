@@ -49,9 +49,11 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let component = LoggedInComponent(dependency: dependency, email: email, password: password)
         let interactor = LoggedInInteractor()
         let todoListBuilder = TodoListBuilder(dependency: component)
+        let detailContentsBuilder = DetailContentsBuilder(dependency: component)
         interactor.listener = listener
         return LoggedInRouter(interactor: interactor,
                               viewController: component.LoggedInViewController,
-                              todoListBuilder: todoListBuilder)
+                              todoListBuilder: todoListBuilder,
+                              detailContentsBuilder: detailContentsBuilder)
     }
 }

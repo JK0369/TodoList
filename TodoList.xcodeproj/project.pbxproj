@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1330DC3816EF9BABEA7B2962 /* Pods_TodoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4490A86ED0E7BFE3B4FE824F /* Pods_TodoList.framework */; };
+		E01DEC1D263BA51400760A8C /* DetailContentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC19263BA51400760A8C /* DetailContentsRouter.swift */; };
+		E01DEC1E263BA51400760A8C /* DetailContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC1A263BA51400760A8C /* DetailContentsViewController.swift */; };
+		E01DEC1F263BA51400760A8C /* DetailContentsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC1B263BA51400760A8C /* DetailContentsBuilder.swift */; };
+		E01DEC20263BA51400760A8C /* DetailContentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC1C263BA51400760A8C /* DetailContentsInteractor.swift */; };
+		E01DEC23263BA57B00760A8C /* LoggedInComponent+DetailContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */; };
 		E0840A1C263A83F100D04DF2 /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */; };
 		E0840A1D263A83F100D04DF2 /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */; };
 		E0840A1E263A83F100D04DF2 /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */; };
@@ -39,6 +44,11 @@
 		0ED9813823246ED433AD9BB7 /* Pods-TodoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList.debug.xcconfig"; path = "Target Support Files/Pods-TodoList/Pods-TodoList.debug.xcconfig"; sourceTree = "<group>"; };
 		4490A86ED0E7BFE3B4FE824F /* Pods_TodoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD497FBB6EB1D35CFAD558D3 /* Pods-TodoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoList.release.xcconfig"; path = "Target Support Files/Pods-TodoList/Pods-TodoList.release.xcconfig"; sourceTree = "<group>"; };
+		E01DEC19263BA51400760A8C /* DetailContentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsRouter.swift; sourceTree = "<group>"; };
+		E01DEC1A263BA51400760A8C /* DetailContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsViewController.swift; sourceTree = "<group>"; };
+		E01DEC1B263BA51400760A8C /* DetailContentsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsBuilder.swift; sourceTree = "<group>"; };
+		E01DEC1C263BA51400760A8C /* DetailContentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsInteractor.swift; sourceTree = "<group>"; };
+		E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+DetailContents.swift"; sourceTree = "<group>"; };
 		E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
 		E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
@@ -97,11 +107,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E001809C263BA4ED00BA3559 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E01DEC18263BA50B00760A8C /* DetailContents */ = {
+			isa = PBXGroup;
+			children = (
+				E01DEC19263BA51400760A8C /* DetailContentsRouter.swift */,
+				E01DEC1A263BA51400760A8C /* DetailContentsViewController.swift */,
+				E01DEC1B263BA51400760A8C /* DetailContentsBuilder.swift */,
+				E01DEC1C263BA51400760A8C /* DetailContentsInteractor.swift */,
+			);
+			path = DetailContents;
+			sourceTree = "<group>";
+		};
 		E0840A18263A83DB00D04DF2 /* LoggedIn */ = {
 			isa = PBXGroup;
 			children = (
 				E0840A19263A83F100D04DF2 /* LoggedInRouter.swift */,
 				E0840A1A263A83F100D04DF2 /* LoggedInBuilder.swift */,
+				E01DEC22263BA57B00760A8C /* LoggedInComponent+DetailContents.swift */,
 				E0B34A6C263AD17500C72855 /* LoggedInComponent+TodoList.swift */,
 				E0840A1B263A83F100D04DF2 /* LoggedInInteractor.swift */,
 			);
@@ -129,6 +158,8 @@
 		E0868D9826397BCC003D9D87 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				E01DEC18263BA50B00760A8C /* DetailContents */,
+				E001809C263BA4ED00BA3559 /* New Group */,
 				E0B34A6E263AE4EF00C72855 /* Utils */,
 				E0B34A63263AD07800C72855 /* TodoList */,
 				E0840A18263A83DB00D04DF2 /* LoggedIn */,
@@ -316,6 +347,8 @@
 				E0868DC4263985BD003D9D87 /* LoggedOutBuilder.swift in Sources */,
 				E0840A1C263A83F100D04DF2 /* LoggedInRouter.swift in Sources */,
 				E0840A1D263A83F100D04DF2 /* LoggedInBuilder.swift in Sources */,
+				E01DEC1D263BA51400760A8C /* DetailContentsRouter.swift in Sources */,
+				E01DEC1F263BA51400760A8C /* DetailContentsBuilder.swift in Sources */,
 				E0868DB926397F77003D9D87 /* RootBuilder.swift in Sources */,
 				E0868DB726397F77003D9D87 /* RootRouter.swift in Sources */,
 				E0B34A68263AD08500C72855 /* TodoListRouter.swift in Sources */,
@@ -324,7 +357,10 @@
 				E0868DC2263985BD003D9D87 /* LoggedOutRouter.swift in Sources */,
 				E0868DC726398A45003D9D87 /* RootComponent+LoggedOut.swift in Sources */,
 				E0840A1E263A83F100D04DF2 /* LoggedInInteractor.swift in Sources */,
+				E01DEC23263BA57B00760A8C /* LoggedInComponent+DetailContents.swift in Sources */,
+				E01DEC20263BA51400760A8C /* DetailContentsInteractor.swift in Sources */,
 				E0F04ECD263A84DA009A07B2 /* RootComponent+LoggedIn.swift in Sources */,
+				E01DEC1E263BA51400760A8C /* DetailContentsViewController.swift in Sources */,
 				E0868DAF26397E72003D9D87 /* AppComponent.swift in Sources */,
 				E0868D9A26397BCC003D9D87 /* AppDelegate.swift in Sources */,
 				E0B34A69263AD08500C72855 /* TodoListViewController.swift in Sources */,
