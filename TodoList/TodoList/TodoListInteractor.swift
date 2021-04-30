@@ -19,7 +19,7 @@ protocol TodoListPresentable: Presentable {
 
 protocol TodoListListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
-    func registeredTodo()
+    func registeredTodo(title: String, detail: String)
 }
 
 final class TodoListInteractor: PresentableInteractor<TodoListPresentable>, TodoListInteractable, TodoListPresentableListener {
@@ -44,7 +44,8 @@ final class TodoListInteractor: PresentableInteractor<TodoListPresentable>, Todo
         // TODO: Pause any business logic.
     }
 
-    func registeredTodo() {
-        listener?.registeredTodo()
+    func registeredTodo(title: String, detail: String) {
+        listener?.registeredTodo(title: title, detail: detail)
     }
+
 }

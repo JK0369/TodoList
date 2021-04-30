@@ -38,7 +38,8 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
         // TODO: Pause any business logic.
     }
 
-    func registeredTodo() {
+    func registeredTodo(title: String, detail: String) {
+        mutableMemoStream.updateMemo(withMemo: .init(title: title, detail: detail))
         router?.routeToDetailContents()
     }
 
@@ -49,5 +50,4 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
     init(mutableMemoStream: MutableMemoStream) {
         self.mutableMemoStream = mutableMemoStream
     }
-
 }

@@ -14,7 +14,7 @@ protocol TodoListPresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
-    func registeredTodo()
+    func registeredTodo(title: String, detail: String)
 }
 
 final class TodoListViewController: UIViewController, TodoListPresentable, TodoListViewControllable {
@@ -109,7 +109,7 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
             UserDefaultManager.detail.append(description)
             self?.data = UserDefaultManager.todoList
             self?.tableView.reloadData()
-            self?.listener?.registeredTodo()
+            self?.listener?.registeredTodo(title: title, detail: description)
 
         }
 
