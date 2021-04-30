@@ -30,4 +30,7 @@ fileprivate struct UserDefaultWrapper<E> {
 struct UserDefaultManager {
     @UserDefaultWrapper(key: "todoList", defaultValue: [String]())
     static var todoList
+
+    @UserDefaultWrapper(key: "detail", defaultValue: [String]())
+    static var detail
 }

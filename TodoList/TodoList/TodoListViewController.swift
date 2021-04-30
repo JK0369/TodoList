@@ -20,6 +20,7 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
 
     weak var listener: TodoListPresentableListener?
     var data = [String]()
+    let bag = DisposeBag()
 
     init(email: String, password: String) {
         self.email = email
@@ -51,6 +52,10 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         view.addSubview(button)
+        button.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.alertWithTF()
+            }).disposed(by: bag)
         return button
     }()
 
@@ -86,6 +91,35 @@ final class TodoListViewController: UIViewController, TodoListPresentable, TodoL
         }
         return tableView
     }()
+
+    private func alertWithTF() {
+        let alert = UIAlertController(title: "메모", message: "메모를 입력해주세요", preferredStyle: UIAlertController.Style.alert )
+        let save = UIAlertAction(title: "저장", style: .default) {_ in
+            let textField1 = alert.textFields![0] as UITextField
+            let textField2 = alert.textFields![1] as UITextField
+            let title = textField1.text ?? ""
+            let description = textField2.text ?? ""
+
+            UserDefaultManager.todoList.append(title)
+            UserDefaultManager.detail.append(description)
+            self.data = UserDefaultManager.todoList
+            self.tableView.reloadData()
+        }
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "타이틀 입력"
+            textField.textColor = .black
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "세부내용 입력"
+            textField.textColor = .darkGray
+        }
+        alert.addAction(save)
+
+        let cancel = UIAlertAction(title: "취소", style: .default) { (alertAction) in }
+        alert.addAction(cancel)
+        self.present(alert, animated:true, completion: nil)
+    }
 
     private let email: String
     private let password: String
