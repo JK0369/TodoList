@@ -15,6 +15,7 @@ protocol DetailContentsRouting: ViewableRouting {
 protocol DetailContentsPresentable: Presentable {
     var listener: DetailContentsPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func set(memo: Memo)
 }
 
 protocol DetailContentsListener: class {
@@ -37,6 +38,7 @@ final class DetailContentsInteractor: PresentableInteractor<DetailContentsPresen
     override func didBecomeActive() {
         super.didBecomeActive()
         // TODO: Implement business logic here.
+        updateMemo()
     }
 
     override func willResignActive() {
@@ -47,5 +49,12 @@ final class DetailContentsInteractor: PresentableInteractor<DetailContentsPresen
     // MARK: - Private
 
     private let memoStream: MemoStream
+
+    private func updateMemo() {
+        memoStream.memo
+            .subscribe(onNext: { [weak self] in
+                self?.presenter.set(memo: $0)
+            }).disposeOnDeactivate(interactor: self)
+    }
 
 }

@@ -22,4 +22,9 @@ final class DetailContentsViewController: UIViewController, DetailContentsPresen
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    func set(memo: Memo) {
+        print(memo)
+    }
+
 }
