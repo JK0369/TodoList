@@ -17,4 +17,7 @@ protocol LoggedInDependencyDetailContents: Dependency {
 extension LoggedInComponent: DetailContentsDependency {
 
     // TODO: Implement properties to provide for DetailContents scope.
+    var memoStream: MemoStream {
+        return mutableMemoStream
+    }
 }

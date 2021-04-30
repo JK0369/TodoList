@@ -10,11 +10,16 @@ import RIBs
 protocol DetailContentsDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
+    var memoStream: MemoStream { get }
 }
 
 final class DetailContentsComponent: Component<DetailContentsDependency> {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+
+    fileprivate var memoStream: MemoStream {
+        return dependency.memoStream
+    }
 }
 
 // MARK: - Builder
@@ -32,7 +37,7 @@ final class DetailContentsBuilder: Builder<DetailContentsDependency>, DetailCont
     func build(withListener listener: DetailContentsListener) -> DetailContentsRouting {
         let component = DetailContentsComponent(dependency: dependency)
         let viewController = DetailContentsViewController()
-        let interactor = DetailContentsInteractor(presenter: viewController)
+        let interactor = DetailContentsInteractor(presenter: viewController, memoStream: component.memoStream)
         interactor.listener = listener
         return DetailContentsRouter(interactor: interactor, viewController: viewController)
     }

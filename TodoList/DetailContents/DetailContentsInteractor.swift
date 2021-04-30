@@ -28,7 +28,8 @@ final class DetailContentsInteractor: PresentableInteractor<DetailContentsPresen
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: DetailContentsPresentable) {
+    init(presenter: DetailContentsPresentable, memoStream: MemoStream) {
+        self.memoStream = memoStream
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -42,4 +43,9 @@ final class DetailContentsInteractor: PresentableInteractor<DetailContentsPresen
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+
+    // MARK: - Private
+
+    private let memoStream: MemoStream
+
 }
