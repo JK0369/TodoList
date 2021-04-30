@@ -1,35 +1,35 @@
 //
-//  RootInteractor.swift
+//  TodoListInteractor.swift
 //  TodoList
 //
-//  Created by 김종권 on 2021/04/28.
+//  Created by 김종권 on 2021/04/29.
 //
 
 import RIBs
 import RxSwift
 
-protocol RootRouting: ViewableRouting {
+protocol TodoListRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
-    func routeToLoggedIn(email: String?, password: String?)
 }
 
-protocol RootPresentable: Presentable {
-    var listener: RootPresentableListener? { get set }
+protocol TodoListPresentable: Presentable {
+    var listener: TodoListPresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol RootListener: class {
+protocol TodoListListener: class {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func registeredTodo(title: String, detail: String)
 }
 
-final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
+final class TodoListInteractor: PresentableInteractor<TodoListPresentable>, TodoListInteractable, TodoListPresentableListener {
 
-    weak var router: RootRouting?
-    weak var listener: RootListener?
+    weak var router: TodoListRouting?
+    weak var listener: TodoListListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: RootPresentable) {
+    override init(presenter: TodoListPresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -44,7 +44,8 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         // TODO: Pause any business logic.
     }
 
-    func didLogin(withEmail: String?, _ password: String?) {
-        router?.routeToLoggedIn(email: withEmail, password: password)
+    func registeredTodo(title: String, detail: String) {
+        listener?.registeredTodo(title: title, detail: detail)
     }
+
 }
